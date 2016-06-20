@@ -1,0 +1,43 @@
+html {
+  position: relative;
+
+  min-width: 94%;
+  min-height: 94%;
+}
+
+body {
+  margin: 0;
+  padding: 3%;
+
+  background-color: blue;
+}
+
+.main_area {
+  position: absolute;
+
+  margin: 0;
+  padding: 0;
+
+  width: 94%;
+  height: 94%;
+
+  background-color: white;
+}
+
+#black_box {
+  margin: 0;
+  padding: 0;
+
+  width: 100px;
+  height: 100px;
+
+  background-color: green;
+
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+}
+
+.control_button {
+  margin: 10px;
+}
