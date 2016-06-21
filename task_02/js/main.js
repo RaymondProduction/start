@@ -23,6 +23,9 @@ $(document).ready(function () {
   // event to this element. When a click event will happen,
   // the function "moveRight" will be executed.
   $('[name="right_btn"]').click(moveRight);
+  $('[name="down_btn"]').click(moveDown);
+  $('[name="left_btn"]').click(moveLeft);
+  $('[name="up_btn"]').click(moveUp);
 });
 
 function moveRight() {
@@ -35,4 +38,15 @@ function moveRight() {
     //     https://developer.mozilla.org/en/docs/Web/CSS/margin-left
     marginLeft: '+=100px',
   }, 500);
+}
+
+function moveUp() {
+  blackBoxEl.animate({ marginTop: '-=50px'} , 500);
+}
+
+function moveDown() {
+  blackBoxEl.animate({ marginTop: '+=50px'} , 500);
+}
+function moveLeft() {
+  blackBoxEl.animate({ marginLeft: '-=100px'}, 500);
 }
