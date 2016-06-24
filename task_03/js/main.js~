@@ -47,7 +47,7 @@ function add() {
 
 function sub() {
     var numOne = parseFloat(numOneEl.val()),
-         numTwo = parseFloat(numTwoEl.val()); 
+        numTwo = parseFloat(numTwoEl.val()); 
 
   operationSignEl.html('-');
   resultEl.html('= ' +  (numOne-numTwo));
