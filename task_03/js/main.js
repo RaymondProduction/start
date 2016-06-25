@@ -3,7 +3,6 @@ var numOneEl, numTwoEl, operationSignEl, resultEl;
 function exercises() {
   // Write here exercise code from http://eloquentjavascript.net/ .
   // Chapters 2, 3, and 4.
-
 }
 
 $(document).ready(function () {
@@ -17,55 +16,26 @@ $(document).ready(function () {
   operationSignEl = $('#operation_sign');
   resultEl = $('#result');
   
-  //$(document).click(test);
+  $("button").click(function(event) {
+        numOne=parseFloat(numOneEl.val());
+        numTwo=parseFloat(numTwoEl.val());
+        nameButton=event.target.name;
+        // I can get the name of the button so
+        //nameButton=jQuery(this).attr("name");
+        if (nameButton=="add_btn"){ 
+          numResult=numOne+numTwo;
+          operationSignEl.html('+');
+        }else if (nameButton=="sub_btn"){
+          numResult=numOne-numTwo;
+          operationSignEl.html('-');
+        }else if (nameButton=="mult_btn"){
+          numResult=numOne*numTwo;
+          operationSignEl.html('x');
+        }else if (nameButton=="div_btn"){
+          numResult=numOne/numTwo;
+          operationSignEl.html(':');
+        }
+        resultEl.html('='+numResult);    
+    });
   
-  $('[name="add_btn"]').click(add);
-  $('[name="sub_btn"]').click(sub);
-  $('[name="mult_btn"]').click(mult);
-  $('[name="div_btn"]').click(div);
 });
-
-function test(){
-  numOne=parseFloat(numOneEl.val());
-  numTwo=parseFloat(numTwoEl.val());
-}
-
-function add() {
-    var numOne = parseFloat(numOneEl.val()),
-        numTwo = parseFloat(numTwoEl.val());    
-
-  // Look at documentation for function "parseFloat". It will help you
-  // convert a string to a float number.
-  // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/parseFloat
-
-  console.log('number one = "' + numOne + '".');
-  console.log('number two = "' + numTwo + '".');
-
-  operationSignEl.html('+');
-  resultEl.html('= ' +  (numOne+numTwo));
-}
-
-function sub() {
-    var numOne = parseFloat(numOneEl.val()),
-         numTwo = parseFloat(numTwoEl.val()); 
-
-  operationSignEl.html('-');
-  resultEl.html('= ' +  (numOne-numTwo));
-}
-
-function mult() {
- var numOne = parseFloat(numOneEl.val()),
-        numTwo = parseFloat(numTwoEl.val()); 
-
-  operationSignEl.html('x');
-  resultEl.html('= ' +  (numOne*numTwo));
-}
-
-function div() {
- var numOne = parseFloat(numOneEl.val()),
-      numTwo = parseFloat(numTwoEl.val()); 
-
-  operationSignEl.html(':');
-  resultEl.html('= ' +  (numOne/numTwo));
-
-}
