@@ -3,7 +3,6 @@ var numOneEl, numTwoEl, operationSignEl, resultEl;
 function exercises() {
   // Write here exercise code from http://eloquentjavascript.net/ .
   // Chapters 2, 3, and 4.
-
 }
 
 $(document).ready(function () {

@@ -22,6 +22,7 @@ $(document).ready(function () {
         nameButton=event.target.name;
         // I can get the name of the button so
         //nameButton=jQuery(this).attr("name");
+
         if (nameButton=="add_btn"){ 
           numResult=numOne+numTwo;
           operationSignEl.html('+');
