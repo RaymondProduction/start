@@ -199,6 +199,38 @@ console.log(prepend(10, prepend(20, null)));
 console.log(nth(arrayToList([10, 20, 30]), 1));
 // → 20
 //--------------------------------------------------------------
+// * Deep comparison *
+function deepEqual(obj1,obj2){
+  var result=true
+  for (var property in obj1) {
+    if (typeof(obj1[property])=="object" & obj1[property]!=null){
+        result = deepEqual(obj1[property],obj2[property]);
+    } else {   
+      if (obj1[property]!=obj2[property]){ 
+        result=false; 
+      }
+    }
+  }
+  for (var property in obj2) {
+    if (typeof(obj1[property])=="object" & obj1[property]!=null){
+        result = deepEqual(obj1[property],obj2[property]);
+    } else {   
+      if (obj1[property]!=obj2[property]){ 
+        result=false; 
+      }
+    }
+  }
+  return result;
+}
+
+var obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true
+//--------------------------------------------------------------
 }
 
 
