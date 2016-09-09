@@ -87,13 +87,13 @@ var ages = [];
 
 ancestry.forEach(function(person) {
   if (byName[person.mother]!=null) {
-     console.log(byName[person.mother].died-person.born-age(person));
-     ages.push(person.born-byName[person.mother].died-age(person));
-     //console.log(ages[ages.length]);
+     console.log(age(byName[person.mother])-(person.born-p));
+     //ages[ages.length]=age(byName[person.mother])-age(person);
+    // console.log(ages[ages.length]);
   }
 });
 
-  console.log(average(ages));
+//console.log(average(ages));
   // --------------------------------------------
 }
 exercises();
