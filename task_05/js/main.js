@@ -59,41 +59,30 @@ function exercises() {
   console.log(Flattening(arrays));
   console.log()
   // → [1, 2, 3, 4, 5, 6]
+
+  //----------------------------------------------
   // Mother-child age difference
-
-
-console.log(ancestry.born);
-// → 1980
 
 function average(array) {
   function plus(a, b) { return a + b; }
   return array.reduce(plus) / array.length;
 }
 
-
-function age(p) { return p.died - p.born; }
-function male(p) { return p.sex == "m"; }
-function female(p) { return p.sex == "f"; }
-
 var byName = {};
-ancestry.forEach(function(person) {    
-      byName[person.name] = person;
-      //console.log("name: " ,person.name,"age: ",age(person));
-      //console.log(person);
+ancestry.forEach(function(person) {
+  byName[person.name] = person;
 });
 
-
 var ages = [];
+function age(p) { return p.died - p.born; }
 
 ancestry.forEach(function(person) {
   if (byName[person.mother]!=null) {
-     console.log(byName[person.mother].died-person.born-age(person));
-     ages.push(person.born-byName[person.mother].died-age(person));
-     //console.log(ages[ages.length]);
+     ages.push(Math.abs(person.born-byName[person.mother].born-age(person)));
   }
 });
 
-  console.log(average(ages));
+ console.log(average(ages));
   // --------------------------------------------
 }
 exercises();
